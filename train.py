@@ -48,7 +48,6 @@ default_params = {
     'keep_old_checkpoints': False,
     'datasets_path': 'datasets',
     'cond_path': 'datasets',
-
     'results_path': 'results',
     'condset': '73',
     'epoch_limit': 1000,
@@ -174,7 +173,7 @@ def make_data_loader(overlap_len, params):
            # max_cond=None
            # min_cond=None
 
-        dataset = FolderDataset(path, cond_path, overlap_len, params['q_levels'], params['ulaw'], params['seq_len'], params['batch_size'], split_from, split_to, max_cond, min_cond)
+        dataset = FolderDataset(params['datasets_path'], path, cond_path, overlap_len, params['q_levels'], params['ulaw'], params['seq_len'], params['batch_size'], split_from, split_to, max_cond, min_cond)
         
         
         (max_cond, min_cond)= dataset.cond_range()

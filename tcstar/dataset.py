@@ -18,7 +18,7 @@ for file in files:
         minTime = time
 
 # Randomly take audio files from each of the speakers until minimum duration is reached
-open('wav.list', 'w').close()           # Clear file before appending
+open(path + 'wav.list', 'w').close()           # Clear file before appending
 generalFile = open(path + 'wav.list', "a")
 partitions = {'train': 0.6, 'validation': 0.2, 'test': 0.2}
 for part in partitions:
